@@ -1,0 +1,20 @@
+table, td, th {
+    border: 1px solid black;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.main {
+    width: 60%;
+    margin: auto;
+    background: cadetblue;
+}
+
+.header {
+    width: 60%;
+    margin: auto;
+    background: cadetblue;
+}

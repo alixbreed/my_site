@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Budget</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'budget/css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Budget</a>
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'homepage' %}">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'budget:new' %}">New</a>
+        </li>
+    </ul>
+</nav>
+<div class="main" align="center">
+{% if expenses_list %}
+<table>
+    <tr><th>Дата</th><th>Наименование</th><th>Категория</th><th>Стоимость</th></tr>
+    {% for expense in expenses_list %}
+        <tr><td>{{ expense.date }}</td> <td>{{ expense.comment }}</td> <td>{{ expense.category }}</td> <td>{{ expense.cost }}</td></tr>
+    {% endfor %}
+</table>
+{% else %}
+    Nothing to see here
+{% endif %}
+</div>
+</body>
+</html>
