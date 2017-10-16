@@ -1,23 +1,2 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Creating new expense</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'budget/css/style.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
-</head>
-<body>
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Budget</a>
-            <ul class="navbar-nav mr-auto" >
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'homepage' %}">New</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'budget:new' %}">New</a>
-                </li>
-            </ul>
-    </nav>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}<title>New expense</title>{% endblock %}
